@@ -10,17 +10,20 @@ Everything to do with the model including the train/test split function was impl
 The program requires matplotlib, seaborn, numpy and pandas.
 
 # Model Performance
-## Confusion Matrix
+![precision_f1_and_recall.png](model_performance_evaluation_outputs/precision_f1_and_recall.png)
 ![confusion_matrix.png](model_performance_evaluation_outputs/confusion_matrix.png)
-The
-
-## Learning Curve
 ![learning_curve.png](model_performance_evaluation_outputs/learning_curve.png)
-The learning curve of the model can be gathered by `iterative_id3_build()` which builds the tree on an
-increasingly large percentage of the training data. It returns this information in the form of 2 arrays:
-fractions, accuracies. `fractions[0], accruacies[0]` would correspond to the accuracy of the model when trained on `fraction[0]`*100% of the data.
-
-
+This implementation ID3 learning decision tree performed very well with the dataset used. The
+tree was implemented as a binary tree. Since the model consistently performs at a high level of
+accuracy (mid to high 90s), adding more branches would unnecessarily increase the complexity of the model. The
+test set did not have an even distribution of classes, with 72.2% of all
+test feature vectors belonging to the unacc class. This means the model evaluations may be subject
+to bias, and may not generalize well to a larger test set which has a more even distribution.
+Additionally, the distribution of the training data was never verified, and it could have similar
+problems to the test set. Therefore, to improve the model, the distribution of the training data
+should be explored, and the model should be tested on more examples for the other classes,
+particularly the good and vgood classes. Overall, for the needs of this dataset, the model
+performance was exemplary based upon the precision, F1 and recall scores and the confusion matrix.
 
 # Instructions
 The program will print the train test split and the accuracy of the model by calling the `main()` function with the filename of the input data csv, the training and testing data
@@ -28,8 +31,8 @@ sizes, and whether the user wants performance evaluation plots to be shown upon 
 
 
 
-# How It Works
-The decision tree is built recursively by the ```id3_build_tree()``` function with inputs `X` and `y` which
+# Building the Tree
+The binary decision tree is built recursively by the ```id3_build_tree()``` function with inputs `X` and `y` which
 are arrays of the input and outputs of the training data. `id3_build_tree()` returns the root node of the decision tree. Then, to make a decision
 for feature vector `x` based off the decision tree, `make_decision()` can be called with the root node
 and x passed through. This will return the decision for x.
