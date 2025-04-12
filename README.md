@@ -1,4 +1,4 @@
-# Supervised Machine Learning Algorithms From Scratch
+# Supervised Machine Learning Algorithms from Scratch
 This repository contains two machine learning models I implemented from scratch in June 2024 for a university project on supervised machine learning. The first project used decision tree learning to
 evaluate cars based upon metrics and the second used a 3 layer neural network to classify clothing items using image data. I implemented
 the algorithms for both projects from scratch and then wrote tests to evaluated their performance based upon metrics I determined. This assignment was
