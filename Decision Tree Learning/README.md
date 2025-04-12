@@ -5,7 +5,7 @@ The program requires matplotlib, seaborn, numpy and pandas.
 ![precision_f1_and_recall.png](model_performance_evaluation_outputs/precision_f1_and_recall.png)
 ![confusion_matrix.png](model_performance_evaluation_outputs/confusion_matrix.png)
 ![learning_curve.png](model_performance_evaluation_outputs/learning_curve.png)
-This implementation ID3 learning decision tree performed very well with the dataset used. Since the model consistently performed at a high level of
+This ID3 learning decision tree implementation performed very well with the dataset. Since the model consistently performed at a high level of
 accuracy (mid to high 90s) as a binary tree, additional branches were not added to avoid unnecessarily complexity. The model evaluations may be subject
 to bias, and may not generalize well to a larger test set which has a more even distribution. This is because the
 test set did not have an even distribution of classes, with 72.2% of all test feature vectors belonging to the unacc class. 
